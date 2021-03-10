@@ -1,1 +1,2 @@
 # Rekesz
+kapcsolat vegyen fel!
