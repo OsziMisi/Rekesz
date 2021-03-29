@@ -6,3 +6,5 @@ Még egy sor
 Githuboi
 Ez egy konflitkus teszt!
 Ez egy ds verzio szinkron teszt
+UJ gep teszt!
+INDUL!
