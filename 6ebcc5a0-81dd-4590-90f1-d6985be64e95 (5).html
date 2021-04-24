@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
+  <title>Assignments</title>
+
+  <base href="https://res-1.cdn.office.net/eduassignmentsui/">
+  <link as="font" crossorigin="anonymous" href="assets/fonts/segoeui-regular-final.woff2" rel="preload">
+  <link as="font" crossorigin="anonymous" href="assets/fonts/segoeui-semibold-final.woff2" rel="preload">
+  <link as="font" crossorigin="anonymous" href="assets/fonts/segoeui-semilight-final.woff2" rel="preload">
+
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    function openFrame(querystring) {
+      var iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.src = 'index-boot-logger.html' + querystring;
+      window.document.body.appendChild(iframe);
+    }
+    window.onerror = function (message, source, lineno, colno, error) {
+      openFrame(
+        '?errorType=' + encodeURIComponent(error && error.name) +
+        '&message=' + encodeURIComponent(message) +
+        '&linno=' + encodeURIComponent(lineno) +
+        '&colno=' + encodeURIComponent(colno) +
+        '&filename=' + encodeURIComponent(source) +
+        '&href=' + encodeURIComponent(window.document.location.href)
+      );
+    };
+    window.msEduLoadTimeId = setTimeout(function() {
+      // Pass loaded chunks to the iframe via querystring until we can load the iframe in the same domain
+      const loadedChunks = window.msEduLoadTimes;
+      const shortFileNames = Object.keys(loadedChunks || {}).map(function(name) { return name.split('-')[0] });
+
+      openFrame(
+        '?errorType=timeout' +
+        '&message=' + encodeURIComponent('BootTimeout') +
+        '&href=' + encodeURIComponent(window.document.location.href) +
+        '&chunks=' + encodeURIComponent(shortFileNames.sort().join(';'))
+      )
+    }, 14500)
+  </script>
+  <script>window.UIConfiguration={"flights":{"gradebookAverages":{"global":true,"tenantIds":[]},"uiPlaceholderConfig1":{"global":true,"tenantIds":[]},"uiPlaceholderConfig2":{"global":true,"tenantIds":[]},"uiPlaceholderConfig3":{"global":null,"tenantIds":["b6338c92-533e-4f6d-a327-994263712399"]},"uiPlaceholderConfig4":{"global":true,"tenantIds":[]},"uiPlaceholderConfig5":{"global":null,"tenantIds":["00e561c6-01eb-419a-9954-2b9e18125d30","1774dec2-840e-43e5-8411-265fbb6fdbc2","2388de13-37d0-456b-a0e4-25e56a5904e6","30f488da-74cf-4ac6-9f34-40583320daa4","3b96cb8f-174c-4b65-82eb-5cc38b9e066c","3ecf158f-e401-48e6-91d3-0c6a36ee79be","54523390-017f-49ec-be2a-71cd18de7a48","58e66db6-211b-4a37-b7e8-0ef6967420c1","6f297733-f521-4aec-b028-384dd2eda643","74c90083-03c6-453a-801c-9251cdd17eb8","77a1b388-5acf-492b-bf42-64cbb087d04c","7d700ef5-a0c9-432a-a2ca-fc29c16f2d00","7ffa9726-6c7d-4714-a2cf-4f9d432b3e0e","90592b52-d760-466f-bb25-3098a7cf80e0","92c22ed6-bf88-45ef-b29a-c6b7f97e39a3","9d002949-354f-492a-af72-27d231fe8dc3","aaa2503a-9ff3-491e-b05a-a71e638f19d3","ad4d7bdb-845a-4801-973c-75c062bc3e67","b5a33716-1e23-4b33-ba9a-618a56e76a18","c07ab59f-ce09-49f8-b4c4-9c6dd4f0d8bb","c5852f23-3633-4f29-b386-51da53e35e23","ccd32ca3-16ce-428f-9541-372d6b051929","d0c67a31-d574-4319-a92e-4b6a8b051e85","e0d6252b-4a93-477e-885c-3a03eebc7753","e140fa0b-cea5-4b08-9fba-6334a722a2ec","e915737a-e5d4-4fdc-85b5-ec591c2b140d","35d59036-0257-499b-a738-5fa931a1d169","2682b2ed-5db9-4331-8e0f-c334c6b92168","64f97741-c470-495e-bd77-4b3003f3a9af","7c4357a6-cad4-4f49-bca2-153d47af5ae7","13c8f600-2d9e-4826-af11-2a101adcd4d4","38dd6634-1031-4c50-a9b4-d16cd9d97d57","196b28a3-e90e-4b30-809f-7a4dc1ca8765","07a20f9e-440b-4704-a18b-e3eda26e69e4","edded432-9905-4786-97c5-a1b1ca972100","f4b4f9cd-c417-4e65-8143-10d0fe789053","5eca1ec4-5a64-407b-9778-9f9147b7a293","c972a348-dcb3-4d4d-b449-2136a50d84d4","21358c8a-a957-48d9-977b-b81d88f11b7e","3d7f44db-e0c8-4f1d-a957-27d70737ddb4","b6338c92-533e-4f6d-a327-994263712399","626a5664-0555-4d47-a669-f344fed9201f","6e95f7c1-5c66-4682-b181-f619ca72c0e0"]},"uiPlaceholderConfig6":{"global":false,"tenantIds":[]},"uiDisableAvatarPicture":{"global":true,"tenantIds":[]},"uiDisableClassImage":{"global":true,"tenantIds":[]},"localizeNotificationsUsingTeacherLocale":{"global":true,"tenantIds":[]},"readingProgressResourcePicker":{"global":false,"tenantIds":[]},"readingProgressShowPronunciationSensitivity":{"global":true,"tenantIds":[]},"readingProgressShowRequireVideo":{"global":true,"tenantIds":[]},"enableVideoResource":{"global":null,"tenantIds":["b6338c92-533e-4f6d-a327-994263712399"]},"registerMediaResource":{"global":null,"tenantIds":["00e561c6-01eb-419a-9954-2b9e18125d30","1774dec2-840e-43e5-8411-265fbb6fdbc2","2388de13-37d0-456b-a0e4-25e56a5904e6","30f488da-74cf-4ac6-9f34-40583320daa4","3b96cb8f-174c-4b65-82eb-5cc38b9e066c","3ecf158f-e401-48e6-91d3-0c6a36ee79be","54523390-017f-49ec-be2a-71cd18de7a48","58e66db6-211b-4a37-b7e8-0ef6967420c1","6f297733-f521-4aec-b028-384dd2eda643","74c90083-03c6-453a-801c-9251cdd17eb8","77a1b388-5acf-492b-bf42-64cbb087d04c","7d700ef5-a0c9-432a-a2ca-fc29c16f2d00","7ffa9726-6c7d-4714-a2cf-4f9d432b3e0e","90592b52-d760-466f-bb25-3098a7cf80e0","92c22ed6-bf88-45ef-b29a-c6b7f97e39a3","9d002949-354f-492a-af72-27d231fe8dc3","aaa2503a-9ff3-491e-b05a-a71e638f19d3","ad4d7bdb-845a-4801-973c-75c062bc3e67","b5a33716-1e23-4b33-ba9a-618a56e76a18","c07ab59f-ce09-49f8-b4c4-9c6dd4f0d8bb","c5852f23-3633-4f29-b386-51da53e35e23","ccd32ca3-16ce-428f-9541-372d6b051929","d0c67a31-d574-4319-a92e-4b6a8b051e85","e0d6252b-4a93-477e-885c-3a03eebc7753","e140fa0b-cea5-4b08-9fba-6334a722a2ec","e915737a-e5d4-4fdc-85b5-ec591c2b140d","35d59036-0257-499b-a738-5fa931a1d169","2682b2ed-5db9-4331-8e0f-c334c6b92168","64f97741-c470-495e-bd77-4b3003f3a9af","7c4357a6-cad4-4f49-bca2-153d47af5ae7","13c8f600-2d9e-4826-af11-2a101adcd4d4","38dd6634-1031-4c50-a9b4-d16cd9d97d57","196b28a3-e90e-4b30-809f-7a4dc1ca8765","07a20f9e-440b-4704-a18b-e3eda26e69e4","edded432-9905-4786-97c5-a1b1ca972100","f4b4f9cd-c417-4e65-8143-10d0fe789053","5eca1ec4-5a64-407b-9778-9f9147b7a293","c972a348-dcb3-4d4d-b449-2136a50d84d4","21358c8a-a957-48d9-977b-b81d88f11b7e","3d7f44db-e0c8-4f1d-a957-27d70737ddb4","b6338c92-533e-4f6d-a327-994263712399","626a5664-0555-4d47-a669-f344fed9201f","6e95f7c1-5c66-4682-b181-f619ca72c0e0"]},"enhancedTabCaching":{"global":false,"tenantIds":[]},"enableCalendarIntegration":{"global":null,"tenantIds":["00e561c6-01eb-419a-9954-2b9e18125d30","1774dec2-840e-43e5-8411-265fbb6fdbc2","2388de13-37d0-456b-a0e4-25e56a5904e6","30f488da-74cf-4ac6-9f34-40583320daa4","3b96cb8f-174c-4b65-82eb-5cc38b9e066c","3ecf158f-e401-48e6-91d3-0c6a36ee79be","54523390-017f-49ec-be2a-71cd18de7a48","58e66db6-211b-4a37-b7e8-0ef6967420c1","6f297733-f521-4aec-b028-384dd2eda643","74c90083-03c6-453a-801c-9251cdd17eb8","77a1b388-5acf-492b-bf42-64cbb087d04c","7d700ef5-a0c9-432a-a2ca-fc29c16f2d00","7ffa9726-6c7d-4714-a2cf-4f9d432b3e0e","90592b52-d760-466f-bb25-3098a7cf80e0","92c22ed6-bf88-45ef-b29a-c6b7f97e39a3","9d002949-354f-492a-af72-27d231fe8dc3","aaa2503a-9ff3-491e-b05a-a71e638f19d3","ad4d7bdb-845a-4801-973c-75c062bc3e67","b5a33716-1e23-4b33-ba9a-618a56e76a18","c07ab59f-ce09-49f8-b4c4-9c6dd4f0d8bb","c5852f23-3633-4f29-b386-51da53e35e23","ccd32ca3-16ce-428f-9541-372d6b051929","d0c67a31-d574-4319-a92e-4b6a8b051e85","e0d6252b-4a93-477e-885c-3a03eebc7753","e140fa0b-cea5-4b08-9fba-6334a722a2ec","e915737a-e5d4-4fdc-85b5-ec591c2b140d","35d59036-0257-499b-a738-5fa931a1d169","2682b2ed-5db9-4331-8e0f-c334c6b92168","64f97741-c470-495e-bd77-4b3003f3a9af","7c4357a6-cad4-4f49-bca2-153d47af5ae7","13c8f600-2d9e-4826-af11-2a101adcd4d4","38dd6634-1031-4c50-a9b4-d16cd9d97d57","196b28a3-e90e-4b30-809f-7a4dc1ca8765","07a20f9e-440b-4704-a18b-e3eda26e69e4","edded432-9905-4786-97c5-a1b1ca972100","f4b4f9cd-c417-4e65-8143-10d0fe789053","5eca1ec4-5a64-407b-9778-9f9147b7a293","c972a348-dcb3-4d4d-b449-2136a50d84d4","21358c8a-a957-48d9-977b-b81d88f11b7e","3d7f44db-e0c8-4f1d-a957-27d70737ddb4","b6338c92-533e-4f6d-a327-994263712399","626a5664-0555-4d47-a669-f344fed9201f","6e95f7c1-5c66-4682-b181-f619ca72c0e0","a577166c-bbd3-4b74-9861-b6cf17fd85a1","83070c92-f96d-478f-bc0b-5c764247c8c5"]}},"settings":{"isUIToggleEnabled":true},"ring":"production","ecs":null};</script>
+<script defer src="runtime-c83162061bb6e7124cfa.js" crossorigin="anonymous"></script><script defer src="sdk-teams-assignments-4c7003573f9726c345b8.js" crossorigin="anonymous"></script><script defer src="logger-assignments-5baf69052d9efc34236f.js" crossorigin="anonymous"></script><script defer src="vendor-assignments-f6b2f5da6d1680dceafc.js" crossorigin="anonymous"></script><script defer src="assignments-ab8124ca513934f85e1e.js" crossorigin="anonymous"></script></body>
+
+</html>
